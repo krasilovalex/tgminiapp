@@ -5,6 +5,4 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  to "/lesson.html"
-  to "/course.html"
   status = 200
