@@ -10,6 +10,11 @@
     <title>Document</title>
   </head>
   <body style="background-color: #fff;">
+    <script>
+      function goToLesson(lesson) {
+        window.location.href = '/public/course' + course + '.html';
+      }
+    </script>
     <div>
       <img src="logo.png" style="position: absolute;" alt="">
       <h1 class="nfi" style="font-family: 'Montserrat', sans-serif;
@@ -17,7 +22,7 @@
     </div>
     <div class="btm">
       <h1 class="nfi" style="font-family: 'Montserrat', sans-serif; position: absolute;margin-top: 150px; margin-left: 130px;">Курсы</h1>
-      <button onclick="window.open('course.html')" style="border-radius: 25px; background: #1050E8; position: absolute; margin-top: 200px; width: 335px; height: 76px;font-family: 'Montserrat', sans-serif;color: #fff; font-weight: 700; font-size: 24px; text-align: left;">НАЧИНАЮЩИЙ</button>
+      <button onclick="window.location.href='course.html'" style="border-radius: 25px; background: #1050E8; position: absolute; margin-top: 200px; width: 335px; height: 76px;font-family: 'Montserrat', sans-serif;color: #fff; font-weight: 700; font-size: 24px; text-align: left;">НАЧИНАЮЩИЙ</button>
       <button style="border-radius: 25px; background: #1050E8; position: absolute; margin-top: 300px; width: 335px; height: 76px;font-family: 'Montserrat', sans-serif;color: #fff; font-weight: 700; font-size: 24px; text-align: left;">УГЛУБЛЕННЫЙ</button>
       <button style="border-radius: 25px; background: #1050E8; position: absolute; margin-top: 400px; width: 335px; height: 76px;font-family: 'Montserrat', sans-serif;color: #fff; font-weight: 700; font-size: 24px; text-align: left;">ПРОДВИНУТЫЙ</button>
     </div>
