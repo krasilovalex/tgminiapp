@@ -16,19 +16,24 @@
       overflow-x: hidden;
       font-family: 'Montserrat', sans-serif;
       background-color: #C8F7FF;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    .container {
+    .content {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 16px;
+      padding: 20px;
     }
 
     h1.nfi {
       font-size: 20px;
       margin-top: 20px;
       margin-bottom: 40px;
+      text-align: center;
     }
 
     .card {
@@ -39,13 +44,21 @@
       padding: 20px;
       margin-bottom: 20px;
       position: relative;
+      text-align: left; /* не центрируем содержимое карточки */
     }
 
-    .card img {
-      width: 50px;
+    .img_1 {
+      width: 39%;
       position: absolute;
-      top: -25px;
-      right: 16px;
+      top: 0px;
+      right: 0px;
+    }
+
+    .img_2 {
+      width: 35%;
+      position: absolute;
+      top: -5px;
+      right: 0px;
     }
 
     .card h1, .card h2, .card a {
@@ -75,27 +88,26 @@
 
     .footer {
       width: 100%;
-      max-width: 100%;
       height: 80px;
       background-color: #fff;
-      border-radius: 25px;
-      margin-top: 40px;
+      border-radius: 25px 25px 0 0;
+      margin-top: auto;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="content">
     <h1 class="nfi">Доступные курсы</h1>
 
     <div class="card">
-      <img src="chelblya.png" alt="Курс 1">
+      <img src="chelblya.png" alt="Курс 1" class="img_1">
       <h1>Введение в нейросети и ИИ</h1>
       <h2>@cmsxkl</h2>
       <a href="#">Начать курс</a>
     </div>
 
     <div class="card">
-      <img src="chelikblya.png" alt="Курс 2">
+      <img src="chelikblya.png" alt="Курс 2" class="img_2">
       <h1>Типы нейросетей</h1>
       <h2>@cmsxkl</h2>
       <a href="#">Начать курс</a>
