@@ -117,6 +117,44 @@
       height: 40px;
       width: auto;
     }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 25px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
   </style>
 </head>
 <body>
@@ -134,14 +172,68 @@
       <img src="chelikblya.png" alt="Курс 2" class="img_2">
       <h1>Типы нейросетей</h1>
       <h2>@cmsxkl</h2>
-      <a href="#">Начать курс</a>
+      <a href="#" onclick="window.location.href = 'course.html'">Начать курс</a>
     </div>
   </div>
 
   <div class="footer">
-    <button class="dom-btn" onclick="window.location.href='index.html'" title="На главную">
-      <img src="domik.png" alt="Дом" class="dom">
-    </button>
+    <button class="dom-btn" onclick="openProfile()" title="Профиль">
+      <img src="domik.png" alt="Профиль" class="dom">
+    </button>    
   </div>
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeProfile()">&times;</span>
+      <div class="profile-info">
+        <img id="profilePhoto" src="" alt="Аватар" class="avatar">
+        <h2 id="profileName"></h2>
+        <p id="profileUsername"></p>
+        <p id="profileLevel"></p>
+        <p id="profileExperience"></p>
+        <p id="profileAchievements"></p>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    function openProfile() {
+      const modal = document.getElementById("profileModal");
+      const tg = window.Telegram.WebApp;
+  
+      // Получение данных пользователя из Telegram
+      const user = tg.initDataUnsafe.user;
+      document.getElementById("profileName").innerText = user.first_name + (user.last_name ? ' ' + user.last_name : '');
+      document.getElementById("profileUsername").innerText = '@' + user.username;
+      document.getElementById("profilePhoto").src = user.photo_url || 'default_avatar.png';
+  
+      // Получение дополнительных данных из backend
+      fetch(`/api/user/${user.id}`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("profileLevel").innerText = 'Уровень: ' + data.level;
+          document.getElementById("profileExperience").innerText = 'Опыт: ' + data.experience;
+          document.getElementById("profileAchievements").innerText = 'Достижения: ' + data.achievements.join(', ');
+        })
+        .catch(error => {
+          console.error('Ошибка при получении данных пользователя:', error);
+        });
+  
+      modal.style.display = "block";
+    }
+  
+    function closeProfile() {
+      document.getElementById("profileModal").style.display = "none";
+    }
+  
+    // Закрытие модального окна при клике вне его
+    window.onclick = function(event) {
+      const modal = document.getElementById("profileModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  
 </body>
 </html>

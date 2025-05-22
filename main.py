@@ -47,7 +47,7 @@ def analyze_prompt():
     })
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(port=3000)
 
 # Команда /start
 @bot.message_handler(commands=['start'])
