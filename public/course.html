@@ -26,21 +26,33 @@
       padding: 20px;
     }
 
-    .header img {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 50px;
-      height: auto;
-    }
-
     .header h1 {
       text-align: center;
-      font-size: 14px;
-      color: white;
+      font-size: 16px;
+      color: #000;
       margin: 0;
       padding-top: 20px;
-      color: #000;
+    }
+
+    .stats-box {
+      width: 90%;
+      max-width: 360px;
+      margin: 0 auto 20px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .stats-box h2 {
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .stats-box p {
+      margin: 5px 0;
+      font-size: 13px;
     }
 
     .content {
@@ -48,37 +60,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 10px 20px;
     }
 
     h2.title {
       font-size: 18px;
-      margin-bottom: 30px;
+      margin: 10px 0 20px;
       color: #000;
       font-weight: 700;
       text-align: center;
     }
 
     .lesson-button {
-      width: 90%;
+      width: 100%;
       max-width: 335px;
-      height: 76px;
-      background-color: white;
-      color: #000000;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 20px;
-      padding: 0 20px;
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .next-button {
-      width: 235px;
-      height: 76px;
+      height: auto;
       background-color: white;
       color: #000000;
       border: none;
@@ -86,8 +82,44 @@
       font-size: 14px;
       font-weight: 700;
       font-family: 'Montserrat', sans-serif;
-      margin-top: 30px;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      text-align: left;
       cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-color: #e0e0e0;
+      border-radius: 0 0 25px 25px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #4CAF50;
+      width: 70%; /* Пример: прогресс на 70% */
+    }
+
+    .next-button {
+      width: 235px;
+      height: 56px;
+      background-color: white;
+      color: #000000;
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .footer {
@@ -96,7 +128,32 @@
       background-color: #fff;
       border-radius: 25px 25px 0 0;
       margin-top: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .dom-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dom-btn:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .dom {
+      height: 40px;
+      width: auto;
+    }
+
   </style>
   <title>Начинающий курс</title>
 </head>
@@ -105,19 +162,29 @@
     <h1>НФИИ-Ai</h1>
   </div>
 
+  <div class="stats-box">
+    <h2>📊 Ваш прогресс</h2>
+    <p>Уровень: <strong>1</strong></p>
+    <p>Опыт: <strong>70 XP</strong></p>
+    <p>Уроков завершено: <strong>2 из 10</strong></p>
+  </div>
+
   <div class="content">
     <h2 class="title">Введение в нейросети и ИИ</h2>
 
     <button class="lesson-button" onclick="window.location.href='lesson.html'">
       Урок 1: Что такое искусственный интеллект и нейросети
+      <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
     </button>
 
     <button class="lesson-button" onclick="window.location.href='lesson_2.html'">
       Урок 2: Где мы сталкиваемся с ИИ
+      <div class="progress"><div class="progress-bar" style="width: 70%;"></div></div>
     </button>
 
     <button class="lesson-button" onclick="window.location.href='lesson_3.html'">
       Урок 3: Возможности и ограничения ИИ
+      <div class="progress"><div class="progress-bar" style="width: 0%;"></div></div>
     </button>
 
     <button class="next-button" onclick="window.location.href='course_2.html'">
@@ -125,6 +192,10 @@
     </button>
   </div>
 
-  <div class="footer"></div>
+  <div class="footer">
+    <button class="dom-btn" onclick="window.location.href='index.html'" title="На главную">
+      <img src="domik.png" alt="Дом" class="dom">
+    </button>
+  </div>
 </body>
 </html>

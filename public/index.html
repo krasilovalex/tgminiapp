@@ -44,7 +44,7 @@
       padding: 20px;
       margin-bottom: 20px;
       position: relative;
-      text-align: left; /* не центрируем содержимое карточки */
+      text-align: left;
     }
 
     .img_1 {
@@ -92,6 +92,30 @@
       background-color: #fff;
       border-radius: 25px 25px 0 0;
       margin-top: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dom-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dom-btn:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .dom {
+      height: 40px;
+      width: auto;
     }
   </style>
 </head>
@@ -110,12 +134,14 @@
       <img src="chelikblya.png" alt="Курс 2" class="img_2">
       <h1>Типы нейросетей</h1>
       <h2>@cmsxkl</h2>
-      <a href="#" >Начать курс</a>
+      <a href="#">Начать курс</a>
     </div>
-
-    
   </div>
 
-  <div class="footer"></div>
+  <div class="footer">
+    <button class="dom-btn" onclick="window.location.href='index.html'" title="На главную">
+      <img src="domik.png" alt="Дом" class="dom">
+    </button>
+  </div>
 </body>
 </html>
