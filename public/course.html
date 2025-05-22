@@ -1,26 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #C8F7FF;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      position: relative;
+      padding: 20px;
+    }
+
+    .header img {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: auto;
+    }
+
+    .header h1 {
+      text-align: center;
+      font-size: 14px;
+      color: white;
+      margin: 0;
+      padding-top: 20px;
+      color: #000;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h2.title {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #000;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .lesson-button {
+      width: 90%;
+      max-width: 335px;
+      height: 76px;
+      background-color: white;
+      color: #000000;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 20px;
+      padding: 0 20px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .next-button {
+      width: 235px;
+      height: 76px;
+      background-color: white;
+      color: #000000;
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    .footer {
+      width: 100%;
+      height: 80px;
+      background-color: #fff;
+      border-radius: 25px 25px 0 0;
+      margin-top: auto;
+    }
+  </style>
+  <title>Начинающий курс</title>
 </head>
-<body style="background-color: #1050E8;">
-  <div>
-    <img onclick="window.location.href='index.html'" src="logo.png" style="position: absolute;" alt="">
-    <h1 class="nfi" style="font-family: 'Montserrat', sans-serif;
-    position: absolute; margin-left: 270px; margin-top: 50px; font-size: 14px; color: white">НФИИ-Ai</h1>
+<body>
+  <div class="header">
+    <h1>НФИИ-Ai</h1>
   </div>
-  <div class="btm">
-    <h1 class="nfi" style="font-family: 'Montserrat', sans-serif; position: absolute;margin-top: 150px; margin-left: 80px; color : white; font-size: 18x;">Начинающий курс</h1>
-    <button onclick="window.location.href = 'lesson.html'" style="border-radius: 25px; background: white; position: absolute; margin-top: 200px; width: 335px; height: 76px;font-family: 'Montserrat', sans-serif;color: #1050E8; font-weight: 700; font-size: 16px; text-align: left;">Урок 1 : Что такое промпт-инжиниринг и зачем он нужен?</button>
-    <button onclick = "window.location.href='lesson_2.html'"style="border-radius: 25px; background: white; position: absolute; margin-top: 300px; width: 335px; height: 76px;font-family: 'Montserrat', sans-serif;color: #1050E8; font-weight: 700; font-size: 16px; text-align: left;">Урок 2: Как говорить с ИИ: структура хорошего промпта</button>
-    <button ondlick = "window.location.href='lesson_3.html'"style="border-radius: 25px; background: white; position: absolute; margin-top: 400px; width: 335px; height: 76px;font-family: 'Montserrat', sans-serif;color: #1050E8; font-weight: 700; font-size: 16px; text-align: left;">Урок 3:  Примеры промптов для разных профессий и интересов</button>
-        <button onclick="window.location.href= 'course_2.html'" style="border-radius: 25px; background: white; position: absolute; margin-top: 500px; width: 235px; height: 76px;font-family: 'Montserrat', sans-serif;color: #1050E8; font-weight: 700; font-size: 14px; text-align: center; margin-left: 40px;">Следующая страница</button>
-    </div>
+
+  <div class="content">
+    <h2 class="title">Введение в нейросети и ИИ</h2>
+
+    <button class="lesson-button" onclick="window.location.href='lesson.html'">
+      Урок 1: Что такое искусственный интеллект и нейросети
+    </button>
+
+    <button class="lesson-button" onclick="window.location.href='lesson_2.html'">
+      Урок 2: Где мы сталкиваемся с ИИ
+    </button>
+
+    <button class="lesson-button" onclick="window.location.href='lesson_3.html'">
+      Урок 3: Возможности и ограничения ИИ
+    </button>
+
+    <button class="next-button" onclick="window.location.href='course_2.html'">
+      Следующая страница
+    </button>
+  </div>
+
+  <div class="footer"></div>
 </body>
 </html>
